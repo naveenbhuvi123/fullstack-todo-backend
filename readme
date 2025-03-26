@@ -1,0 +1,82 @@
+# Backend for Full-Stack Task Application
+
+## 🚀 Project Setup
+
+### Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [MongoDB](https://www.mongodb.com/)
+
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo-url.git
+   cd backend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Environment Variables
+Create a `.env` file in the root directory and configure the following:
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+### Running the Server
+Start the backend server with:
+```sh
+npm start
+```
+For development with auto-restart:
+```sh
+npm run dev
+```
+
+---
+
+## 📌 API Routes
+
+### Authentication
+| Route        | Method | Description |
+|-------------|--------|-------------|
+| `/api/register` | POST  | Register a new user |
+| `/api/login` | POST  | Authenticate user and return token |
+
+### Task Management
+| Route        | Method | Description |
+|-------------|--------|-------------|
+| `/api/tasks` | GET    | Get all tasks (Auth required) |
+| `/api/tasks` | POST   | Create a new task (Auth required) |
+| `/api/tasks/:id` | PUT | Update a task (Auth required) |
+| `/api/tasks/:id` | DELETE | Delete a task (Auth required) |
+
+---
+
+## 🔒 Middleware
+- `protect.js`: Ensures routes are accessed only by authenticated users.
+
+---
+
+## 🛠️ Troubleshooting
+### Common Issues
+**1. Module Not Found:**
+- Ensure the correct import path.
+- Check if the file exists in the specified location.
+
+**2. MongoDB Connection Error:**
+- Verify `MONGO_URI` in the `.env` file.
+- Ensure MongoDB service is running.
+
+**3. JWT Token Issues:**
+- Make sure you're sending the token in the `Authorization` header.
+- Check token expiration and re-authenticate if necessary.
+
+---
+
+## 📜 License
+This project is licensed under the MIT License.
+
