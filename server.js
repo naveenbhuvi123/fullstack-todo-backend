@@ -29,6 +29,10 @@ try {
 app.use('/api',taskRoutes);  // 
 app.use("/api", authRoutes);
 
+app.get("/", (req, res) => {
+    res.send("Backend is running successfully! 🚀");
+});
+
 
 
 
